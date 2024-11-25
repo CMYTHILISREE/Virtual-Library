@@ -1,0 +1,26 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const booksSlice = createSlice({
+    name:"books",
+    initialState:{
+    items:[
+    {id: 1, title: 'The Covenant of Water', author: 'Abraham Verghese', category: 'Fiction', description: "Spanning the years 1900 to 1977, The Covenant of Water is set in Kerala, on South India's Malabar Coast, and follows three generations of a family that suffers a peculiar affliction: in every generation, at least one person dies by drowning—and in Kerala, water is everywhere.", coverImage:"https://pictures.abebooks.com/isbn/9780802162175-us.jpg",rating: 4 },
+    { id: 2, title: 'Demon Copperhead', author: 'By Barbara Kingsolver', category: 'Fiction', description: 'Demon Copperhead is a Pulitzer Prize-winning novel by Barbara Kingsolver that tells the story of a boy named Demon who grows up in poverty in the southern Appalachian Mountains.',coverImage: "https://pictures.abebooks.com/isbn/9780063251922-us.jpg", rating: 5 },
+    { id: 3, title: 'Beautiful World, Where Are You', author: 'By Sally Rooney', category: 'Fiction', description: 'Beautiful World, Where Are You is a novel by Sally Rooney that follows the lives of two best friends, Alice Kelleher and Eileen Lydon, as they navigate their careers, relationships, and the world around them',coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/37f4397/2147483647/strip/true/crop/327x491+0+4/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F70%2F41%2Fac9978af4105831447eb4d1cf874%2F9780374602604-us.jpg", rating: 4 },
+    { id: 4, title: 'A Brief History of Time, Where Are You', author: 'By Stephen Hawking', category: 'Non-Fiction', description: "Was there a beginning of time? Could time run backwards? These are just some of the questions considered in an internationally acclaimed masterpiece by one of the world's greatest thinkers.",coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/26026f7/2147483647/strip/true/crop/225x338+0+1/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F0a%2Fb3%2F6421dc1edac7084f6aa7069807c1%2Fbrief-history-time.jpg", rating: 5 },
+    { id: 5, title: "I Know Why the Caged Bird Sings", author: 'By Maya Angelou', category: 'Non-Fiction', description: "Captures the longing of lonely children, the brute insult of bigotry, and the wonder of words that can make the world right.",coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/2729963/2147483647/strip/true/crop/225x338+0+1/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2Fe4%2Fd5%2F0d1349a7478c65cbcfd7c88066fb%2Fcaged-bird.jpg", rating: 5},
+    { id: 6, title: 'In Cold Blood, Where Are You', author: 'By Truman Capote', category: 'Non-Fiction', description: "Captures the longing of lonely children, the brute insult of bigotry, and the wonder of words that can make the world right.",coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/fae3e3e/2147483647/strip/true/crop/225x338+0+1/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2Fe8%2Fd9%2F4f3fb9692c0dff85f49a3f8b26e0%2Fcold-blood.jpg", rating: 5 },
+    { id: 7, title: 'A Journey to the Center of the Earth, Where Are You', author: 'By Jules Verne', category: 'Sci-Fi', description:"Famous adventure tale that practically launched the genre in 1864.",coverImage:"https://assets.brightspot.abebooks.a2z.com/dims4/default/0e9d1e0/2147483647/strip/true/crop/173x260+1+0/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F1e%2Fcf%2Fa38c81289b3291fa6ca3d6d721aa%2Fjourney-centre-earth-verne.jpg", rating: 4 },
+    { id: 8, title: 'The War of the Worlds', author: 'By H.G. Wells', category: 'Sci-Fi', description: "The Martians come to England. A famous example of invasion literature from 1898.",coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/6b0d4ee/2147483647/strip/true/crop/173x260+1+0/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F82%2F87%2F99311b9955fd80d47413194a7617%2Fwar-worlds-hg-wells.jpg", rating: 5 },
+    { id: 9, title: 'Brave New World, Where Are You', author: 'By Aldous Huxley', category: 'Sci-Fi', description: "Set in 2540, this novel imagines a radically different future. So good, it's taught in schools.",coverImage: "https://assets.brightspot.abebooks.a2z.com/dims4/default/f06fed7/2147483647/strip/true/crop/173x260+1+0/resize/506x760!/format/webp/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F3c%2F70%2Fe40deab33c64883d3605b9c76f61%2Fbrave-new-world-huxley.jpg",rating: 5 },
+        ],
+    },
+    reducers:{
+        addItem:(state,action)=>{
+            state.items.push(action.payload);
+        },
+    },
+});
+
+export const { addItem } = booksSlice.actions;
+export default booksSlice.reducer;
